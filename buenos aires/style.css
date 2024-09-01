@@ -1,0 +1,861 @@
+*{
+    padding: 0;
+    margin: 0;
+    text-decoration: none;
+    box-sizing: border-box;
+    font-family: monospace;
+    font-weight: bold;
+}
+body {
+
+    background-image: url(fondo.jpg);
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: cover;
+    background-attachment: fixed;
+
+ }
+
+
+/* Nav */
+nav {
+    display: flex;
+    width: 100%;
+    background: rgba(0, 0, 0, 0.2)   ;
+    position: relative;
+    text-align: center;
+    padding: 15px 30px;
+    align-items: center;
+}
+
+nav .logo {
+    cursor: pointer;
+    transition: all 400ms;
+}
+
+nav .logo:hover {
+    transform: scale(1.2);
+}
+
+nav ul {
+    list-style: none;
+    margin-left: 40px;
+}
+
+nav ul li{
+    float: left;
+    position: relative;
+}
+
+nav ul li a{
+    font-size: 18px;
+    color: white;
+    text-decoration: none;
+    padding: 15px;
+    display: block;
+    transition: all .2s ease;
+    border-radius: 10px;
+    margin-right: 10px;
+}
+
+nav ul li a:hover {
+    background-color: #024D84 ;
+    border-radius: 10px;
+}
+
+nav ul li ul{
+    position: absolute;
+    right:0 ;
+    left: 0;
+    padding: 10px 0px 10px 10px;
+    width: 200px;
+    background-color: rgba(0, 0, 0, 0.3);
+    border-radius: 10px;
+    display: none;
+}
+
+nav ul li ul li a{
+    font-size: 15px;
+    color:rgba(228, 227, 226, 1);
+}
+
+nav ul li ul li ul{
+    position: absolute;
+    top: 0;
+    right: 300px;
+}
+
+nav ul li ul li {
+    width: 100%;
+}
+
+nav ul li:hover > ul {
+display: initial;
+}
+
+ nav .icons {
+    position: absolute;
+    margin: auto;
+    display: none;
+    cursor: pointer;
+ }
+
+ nav .icons span {
+    position: absolute;
+    color: white;
+    font-size: 35px;
+ }
+
+nav .icons {
+    position: absolute;
+    margin: auto;
+    display: none;
+    cursor: pointer;
+ }
+
+ nav .icons span {
+    position: absolute;
+    color: white;
+    font-size: 35px;
+ }
+
+ nav .login {
+  display: flex;
+  position: absolute;
+  top: 45px;
+  right: 50px;
+  font-size: 30px;  
+  cursor: pointer;
+  color: white;
+}
+nav .login a{
+  text-decoration: none;
+  color: white;
+}
+ nav .login a:hover {
+    color:#024D84  ;
+    transition: 0.3s;
+ }
+
+ #checkbox {
+    display: none;
+ }
+
+ #check {
+    display: none;
+ }
+
+ .menu {
+    display: flex;
+    height: 80px;
+    width: 400px;
+    border-radius: 10px;
+    background-color: ;
+    margin: auto;
+    margin-top: 80px;
+    shadow: 0 10px 25px rgba(0, 0, 0, 1.0);
+ }
+
+ .menu p {
+    font-family: segoe ui black;
+    font-size: 60px;
+    font-weight: bolder;
+    color: white;
+    margin: auto;
+ }
+
+
+ .container {
+    background-color: rgba(0, 0, 0, 0.65);
+    height: 700px;
+    width: 1000px;
+    display: block;
+    margin: auto;
+    margin-top: 120px;
+    margin-bottom: 200px;
+    border-radius: 20px;
+    padding-top: 50px;
+    border: 1.5px solid rgba(51, 51, 51, 0.8);
+
+ }
+
+
+.carousel-wrapper {
+  height: 400px;
+  position: relative;
+  width: 800px;
+  display: flex;
+  margin: auto;
+  border-radius: 20px;
+  border: 1px solid rgba(51, 51, 51, 0.8);
+}
+
+.carousel-item {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  padding: 25px 50px;
+  opacity: 0;
+  transition: all 0.2s ease-in-out;
+}
+.arrow{
+  border: solid black;
+  border-width: 0 2px 2px 0;
+  display: inline-block;
+  padding: 12px;
+}
+.arrow-prev {
+  left: 30px;
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%) rotate(135deg);
+  
+}
+.arrow-next {
+  right: 30px;
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%) rotate(-45deg);
+}
+
+[id^= "item"] {
+  display: none;
+}
+.item-1 {
+  z-index: 2;
+  opacity: 1;
+  background: url('buenosaires1.jpg');
+  background-size: cover;
+  border-radius: 20px;
+}
+
+.item-2 {
+  background: url('buenosaires2.jpg');
+  background-size: cover;
+  border-radius: 20px;
+}
+
+.item-3 {
+  background: url('buenosaires3.jpg');
+  background-size: cover;
+  border-radius: 20px;
+}
+
+.item-4 {
+  background: url('buenosaires4.jpg');
+  background-size: cover;
+  border-radius: 20px;
+}
+
+*:target ~ .item-1{
+  opacity: 0;
+}
+#item-1:target ~ .item-1 {
+  opacity: 1;
+
+}
+#item-2:target ~ .item-2, #item-3:target ~ .item-3, #item-4:target ~ .item-4 {
+  z-index: 3;
+  opacity: 1;
+} 
+
+.container-desc {
+    display: block;
+    height: 230px;
+    background-color: rgba(255, 255, 255, 0.05);
+    border-radius: 0 0 20px 20px;
+    width: 1000px;
+
+}
+
+.titulo h3{
+    font-size: 40px;
+    font-family: verdana;
+    width: 300px;
+    margin-left: 100px;
+    margin-top: 20px;
+    color: white;
+}
+
+.descripcion h4 {
+    font-size: 20px;
+    margin-left: 100px;
+    margin-top: 10px;
+    color: white;
+    width: 800px;
+    font-weight: normal;
+}
+
+.precio h5 {
+    font-family: verdana;
+    font-size: 22px;
+    margin-left: 100px;
+    margin-top: 10px;
+    color: white;
+}
+
+
+
+                         /*  --FOTEER-- */
+
+footer {
+    background-color: #1E1E1E;
+    color: white;
+    width: 100%;
+    font-family: "Open Sans";
+
+}
+
+.footer-content {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    flex-direction: column;
+    height: 115px;
+    margin-bottom: 20px;
+}
+
+.footer-content p{
+    font-size: 11px;
+}
+
+footer img {
+    height: 55px;
+}
+
+.socials {
+    list-style: none;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 25px;
+}
+
+.socials li {
+margin: 0 5px;
+margin-top: 10px;
+}
+
+.socials a{
+    text-decoration: none;
+    color: white;
+}
+
+.socials a:hover i{
+    color: #1377B4;
+}
+
+.footer-bottom{
+background-color: black;
+text-align: center;
+padding: 20px 0;
+width: 100%;
+}
+
+
+                    /* Inicia Responsive */
+
+
+
+
+
+ @media screen and (max-width: 1024px) {
+
+    nav {
+    display: block;
+    padding: 0; 
+    }
+
+    nav .logo {
+    display: inline-block;
+    padding: 15px 30px; 
+    margin: auto;
+    }
+
+    nav label {
+    display: initial;
+    }
+
+    nav ul {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    background-color:#3195D5;
+    overflow: hidden;
+    height: 0;
+    transition: 0.5s ease;
+    margin-left: 0;
+
+    }
+   
+    nav ul li {
+    display: flex;
+    width: 100%;
+    padding: 10px 0px 40px 0px;
+    height: 50px;
+    margin-bottom: 0px;
+    }
+
+    nav ul li a{
+    font-size: 17px;
+    color: white;
+    transition: all .2s ease;
+    }
+
+    nav ul a {
+    margin-bottom: 20px;
+    margin-right: 40px; 
+    }
+
+    nav ul li ul{
+    position: relative;
+    width: 100%;
+    height: 50px;
+    padding: 0;
+    border-radius: 10px;
+    }
+
+    nav ul li ul li {
+        width: 100px;
+        height: 65px;
+        padding: 0;
+    }
+
+    nav ul li ul li ul{
+        position: relative;
+        width: 100%;    
+    }
+
+    nav ul li .ubicacion {
+        height: 65px;
+        width: 100%;
+    }
+
+    nav ul li .ubicacion li {
+        width: 120px;
+        margin-right: 0px;
+    }
+
+    nav ul li .ubicacion a{
+        height: 95px;
+
+    }
+
+
+     nav ul li .destino {
+        height: 65px;
+        width: 100%;
+
+    }
+
+    nav ul li .destino li {
+        width: 100px;
+        margin-right: 0px;
+   
+    }
+
+    nav ul li .destino a{
+        height: 65px;
+        margin-left: 0px;
+
+    }
+
+
+    nav ul li .horarios {
+        height: 65px;
+        width: 100%;
+    }
+
+    nav ul li .horarios li {
+        width: 120px;
+        margin-right: 0px;
+    }
+
+    nav ul li .horarios a{
+        height: 65px;
+    }
+
+    nav ul li ul li a:hover {
+        color:#004E80 ;
+        border-radius: 0px;
+    }
+
+    nav ul li a:hover {
+    background-color:rgba(0, 0, 0, 0.0);
+    border-radius: 10px;
+    color: #004E80;
+    }
+
+    nav ul li a{
+    height: 50px;
+    }
+    
+    nav .icons {
+    display: flex;
+    margin: 45px 35px;
+    cursor: pointer;    
+    }
+
+    input[type="checkbox"] {
+    
+    display: inline-flex;
+    position: absolute;
+    top: 40px;
+    right: 80px;
+    cursor: pointer;
+    }
+
+    nav .icons #close {
+        display: none;
+    }
+ 
+    #check:checked~ .icons #close {
+    display: block;
+    }
+
+    #check:checked~ .icons #bars {
+        display: none;
+    }
+
+    #check:checked~ ul {
+        height: 280px;
+        visibility: visible;    
+    }
+
+    .menu {
+    display: flex;
+    height: 80px;
+    width: 400px;
+    border-radius: 10px;
+    background-color: ;
+    margin: auto;
+    margin-top: 65px;
+    shadow: 0 10px 25px rgba(0, 0, 0, 1.0);
+ }
+
+ .menu p {
+    font-family: segoe ui black;
+    font-size: 55px;
+    font-weight: bolder;
+    color: white;
+    margin: auto;
+ }
+
+    .container {
+        height: 574px;
+        width: 550px;
+        margin-top: 90px;
+    }
+
+
+ .carousel-wrapper {
+  height: 300px;
+  position: relative;
+  width: 500px;
+  display: flex;
+  margin: auto;
+  border-radius: 20px;
+  border: 1px solid black;
+}
+
+.container-desc {
+    display: block;
+    height: 200px;
+    background-color: rgba(255, 255, 255, 0.05);
+    border-radius: 0 0 20px 20px;
+    width: 548px;
+}
+
+.titulo h3{
+    font-size: 30px;
+    font-family: verdana;
+    width: 250px;
+    margin-left: 25px;
+    margin-top: 20px;
+    color: white;
+}
+
+.descripcion h4 {
+    font-size: 17px;
+    margin-left: 25px;
+    margin-top: 10px;
+    color: white;
+    width: 500px;
+    font-weight: normal;
+}
+
+.precio h5 {
+    font-family: verdana;
+    font-size: 17px;
+    margin-left: 25px;
+    margin-top: 10px;
+    color: white;
+}
+ 
+ section {
+    
+    height: 1310px; 
+ }
+
+
+    @media screen and (max-width: 620px) {
+
+        
+    nav .logo:hover {
+    transform: scale(1.1);
+    }
+
+    nav .buy{
+    font-size: 25px;
+    }
+
+        nav ul li a{
+    font-size: 13px;
+    }
+
+    nav ul li ul li a{
+    font-size: 11px;
+    padding: 18px 0px 0px 10px;
+    }
+
+    nav ul li ul li {
+    width: 70px;
+    }
+
+    nav .icons span{
+    font-size: 30px;
+    }
+
+
+    nav ul li .ubicacion {
+        height: 50px;
+        width: 100%;
+    }
+
+    nav ul li .ubicacion li {
+        width: 100px;
+        margin-right: 0px;
+    }
+
+    nav ul li .ubicacion a{
+        height: 95px;
+
+    }
+
+
+    nav ul li .destino {
+    height: 52px;
+    width: 250px;
+    padding-left: 5px; 
+    }
+
+    nav ul li .destino li {
+    width: 65px;
+    margin-top: 4px;
+     height: 20px;
+    }
+
+    nav ul li .destino a{
+    height: 20px;
+    width: 50px;
+    padding:0 ;
+    margin-left: 3px;
+    margin-right: 0px;
+    font-size: 9px;
+    }
+
+       nav ul li .horarios {
+    height: 50px;
+    width: 100%;
+    }
+
+    nav ul li .horarios li {
+    width: 100px;
+    margin-right: 0px;
+    }
+
+    nav ul li .horarios a{
+    padding-top: 10px;
+    }
+
+    .item img {
+    height: 120px;
+    width: 150px;
+
+    }
+
+    .menu {
+    height: 50px;
+    width: 250px;
+    margin-top: 80px;
+    }
+
+    .menu p {
+    font-size: 40px;
+    color: white;
+    margin: auto;
+    
+    }
+
+    .container {
+    height: 550px;
+    width: 400px;
+    margin-top: 150px;
+    padding-top: 0;
+
+    }
+
+ .carousel-wrapper {
+  height: 300px;
+  position: relative;
+  width: 398px;
+  display: flex;
+  margin: auto;
+  border-radius: 20px 20px 0px 0px;
+  border: 1.5px solid black;
+}
+
+.item-1 {
+  z-index: 2;
+  opacity: 1;
+  background: url('buenosaires1.jpg');
+  background-size: cover;
+  border-radius: 20px 20px 0 0;
+}
+
+.item-2 {
+  background: url('buenosaires2.jpg');
+  background-size: cover;
+  border-radius: 20px 20px 0 0;
+}
+
+.item-3 {
+  background: url('buenosaires3.jpg');
+  background-size: cover;
+  border-radius: 20px 20px 0 0;
+}
+
+.item-4 {
+  background: url('buenosaires4.jpg');
+  background-size: cover;
+  border-radius: 20px 20px 0 0;
+}
+
+.container-desc {
+    display: block;
+    height: 227px;
+    border-radius: 0 0 20px 20px;
+    width: 397px;
+    background-color: none;
+}
+
+.titulo h3{
+    font-size: 30px;
+    font-family: verdana;
+    width: 250px;
+    margin-left: 25px;
+    margin-top: 20px;
+    color: white;
+}
+
+.descripcion h4 {
+    font-size: 17px;
+    margin-left: 25px;
+    margin-top: 10px;
+    color: white;
+    width: 370px;
+    font-weight: normal;
+}
+
+.precio h5 {
+    font-family: verdana;
+    font-size: 17px;
+    margin-left: 25px;
+    margin-top: 10px;
+    color: white;
+}
+
+
+section {
+    
+    height: 1200px; 
+ }
+ }
+
+
+ @media screen and (max-width: 400px) {
+
+
+.container {
+height: 520px;
+width: 300px;
+margin-top: 150px;
+padding-top: 0;
+margin-bottom: 100px;
+}
+
+ .carousel-wrapper {
+  height: 270px;
+  position: relative;
+  width: 298px;
+  display: flex;
+  margin: auto;
+  border-radius: 20px 20px 0px 0px;
+  border: 1.5px solid black;
+}
+.item-1 {
+  z-index: 2;
+  opacity: 1;
+  background: url('buenosaires1.jpg');
+  background-size: cover;
+  border-radius: 20px 20px 0 0;
+}
+
+.container-desc {
+    display: block;
+    height: 227px;
+    border-radius: 0 0 20px 20px;
+    width: 300px;
+    background-color: none;
+}
+
+.titulo h3{
+    font-size: 25px;
+    font-family: verdana;
+    width: 200px;
+    margin-left: 20px;
+    margin-top: 20px;
+    color: white;
+}
+
+.descripcion h4 {
+    font-size: 15px;
+    margin-left: 20px;
+    margin-top: 10px;
+    color: white;
+    width: 270px;
+    font-weight: normal;
+}
+
+.precio h5 {
+    font-family: verdana;
+    font-size: 15px;
+    margin-left: 20px;
+    margin-top: 10px;
+    color: white;
+}
+ }
+
+
+
+ /* Finaliza Responsive */
+
+    
+
+
+ 
+ 
